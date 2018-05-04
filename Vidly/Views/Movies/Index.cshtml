@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+<h1>Movies</h1>
+
+@if (!Model.Any())
+{
+    <p>We dont have any movies</p>
+}
+else
+
+{
+    foreach (var movie in Model.ToList())
+    {
+        <li>@Html.ActionLink(movie.Name, "Details", "Movies", new {id = movie.Id}, null)</li>
+    }
+}

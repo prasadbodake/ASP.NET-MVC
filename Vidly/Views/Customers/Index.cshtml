@@ -1,0 +1,18 @@
+﻿
+
+@model IEnumerable<Vidly.Models.Customer>
+
+<h1>Customer Details</h1>
+
+@if (!Model.Any())
+{
+    <p>We dont have any customer</p>
+}
+else
+
+{
+    foreach (var customer in Model.ToList())
+    {
+        <li>@Html.ActionLink(customer.Name, "Details", "Customers", new {id = customer.Id}, null)</li>
+    }
+}
